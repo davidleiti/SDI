@@ -1,0 +1,44 @@
+<button (click) = "goToCart();">Cart noOfItems: {{noOfItems}}</button>
+<div>
+    <ol class = "products">
+        <li *ngFor = "let product of products">
+            <!-- <span class="badge">{{client.id}}</span> {{client.name}}
+                <button class="delete" name="delete client"
+                        (click)="delete(client)">x</button> -->
+            <span class = "badge">{{product.name}}</span>  Price: {{product.price}}
+            <button class = "but" (click) = "addProduct(product)">+</button>
+        </li>
+    </ol>
+</div>
+<div *ngIf = "showingCart">
+    Items:
+    <ol class="products">
+        <li *ngFor = "let p of cartProducts">
+            {{p.name}}
+            <input (change) = "setValue($event)" type="text" name = {{p.id}} value={{p.quantity}}>
+        </li>
+    </ol>
+    <table>
+        <tr>
+            <td>
+                Address:
+            </td>
+            <td>
+                <input type="text" (change) = "onAddressChange($event)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                <input type="text" (change) = "onEmailChange($event)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button"  (click) = "onCheckout()">Checkout</button>
+            </td>
+        </tr>
+    </table>
+</div>
