@@ -1,4 +1,4 @@
-#Shopping Cart- 12-10-18
+# Shopping Cart- 12-10-18
 
 	
 Write an application that simulates a shopping cart. The following entities will be used:
